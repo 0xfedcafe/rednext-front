@@ -1,41 +1,34 @@
+/* Sidebar.css */
+
+/* General styling for sidebar */
 .sidebar {
     margin-top: 20px;
     padding-left: 20px;
     width: 400px;
     height: 800px;
-    background-color: #EBEBEB; 
+    background-color: #EBEBEB;
 }
 
-.sidebar-section {
-    color: #191A1A; 
-    font-family: 'Inter', sans-serif; 
-    font-size: 25px; 
-    margin-bottom: 20px; 
+/* Styling for text sections */
+.sidebar-section, .sidebar-legend {
+    color: #191A1A;
+    font-family: 'Inter', sans-serif;
+    font-size: 25px; /* Adjust font size as needed */
+    margin-bottom: 20px;
     margin-top: 40px;
     width: 300px;
     padding-left: 20px;
 }
 
-.sidebar-legend {
-    color: #191A1A; 
-    font-family: 'Inter', sans-serif; 
-    font-size: 25px; 
-    padding-left: 20px;
-    margin-bottom: 20px; 
-    margin-top: 40px;
-}
-
+/* Styling for legend items */
 .legend-item {
-    color: #191A1A; 
     display: flex;
-    margin-bottom: 5px;
     align-items: center;
-    font-family: 'Inter', sans-serif;
-    font-size: 25px; 
 }
 
+/* Styling for legend icons */
 .legend-icon {
-    width: 20px;
-    height: 20px;
+    width: 24px; /* Adjust icon size as needed */
+    height: 24px; /* Adjust icon size as needed */
     margin-right: 10px;
 }

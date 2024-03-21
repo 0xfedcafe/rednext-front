@@ -1,26 +1,29 @@
+
+import React from 'react';
+import Legend from './Legend';
 import '../styles/Sidebar.css';
 
 const Sidebar = ({ burnedArea }) => {
+    const legendItems = [
+        { color: 'red', description: 'Fire' },
+        { color: 'yellow', description: 'High Risk' },
+		{ color: 'blue', description: 'Wind' },
+		{ color: 'grey', description: 'Zone with high risk of fire'}
+    ];
+
     return (
-        <div className="sidebar-sectiob">
+        <div className="sidebar">
             <div className="sidebar-section">
                 <span>Current burned area: {burnedArea ? burnedArea : 2000} hectares</span>
             </div>
-            <div className="sidebar-section">
-                <h2>Legend:</h2>
-                <div className="legend">
-                    <div className="legend-item">
-                        <div className="legend-icon"></div>
-                        <span>Fires</span>
-                    </div>
-                    <div className="legend-item">
-                        <div className="legend-icon"></div>
-                        <span>High risk</span>
-                    </div>
-                </div>
+			<div className="sidebar-legend">
+                <span>Legend:</span>
+			</div>
+            <div className="sidebar-legend">
+                <Legend items={legendItems} />
             </div>
         </div>
     );
 }
 
-export default Sidebar
+export default Sidebar;

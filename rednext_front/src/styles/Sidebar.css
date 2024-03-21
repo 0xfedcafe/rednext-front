@@ -1,10 +1,3 @@
-
-@media screen and (max-width: 768px) {
-    .sidebar {
-        width: 40%; /* on smaller screens */
-    }
-}
-
 .sidebar {
     margin-top: 20px;
     padding-left: 20px;
@@ -17,9 +10,19 @@
     color: #191A1A; 
     font-family: 'Inter', sans-serif; 
     font-size: 25px; 
-    margin-bottom: 30px;
+    margin-bottom: 20px; 
+    margin-top: 40px;
     width: 300px;
     padding-left: 20px;
+}
+
+.sidebar-legend {
+    color: #191A1A; 
+    font-family: 'Inter', sans-serif; 
+    font-size: 25px; 
+    padding-left: 20px;
+    margin-bottom: 20px; 
+    margin-top: 40px;
 }
 
 .legend-item {

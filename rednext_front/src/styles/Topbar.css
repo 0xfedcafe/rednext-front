@@ -1,0 +1,14 @@
+.topbar {
+    height: 85px; 
+    background-color: #191A1A; 
+    padding-left: 20px;
+    display: flex;
+    align-items: center; 
+}
+
+.topbar-heading {
+    color: white; 
+    font-family: 'Inter', sans-serif; 
+    font-size: 30px; 
+    margin: 0; 
+}

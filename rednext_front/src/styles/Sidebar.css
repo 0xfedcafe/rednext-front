@@ -1,0 +1,38 @@
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 40%; /* on smaller screens */
+    }
+}
+
+.sidebar {
+    margin-top: 20px;
+    padding-left: 20px;
+    width: 400px;
+    height: 800px;
+    background-color: #EBEBEB; 
+}
+
+.sidebar-section {
+    color: #191A1A; 
+    font-family: 'Inter', sans-serif; 
+    font-size: 25px; 
+    margin-bottom: 30px;
+    width: 300px;
+    padding-left: 20px;
+}
+
+.legend-item {
+    color: #191A1A; 
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 25px; 
+}
+
+.legend-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}

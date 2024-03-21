@@ -1,26 +1,27 @@
-
+// Sidebar.js
 import React from 'react';
 import Legend from './Legend';
-import '../styles/Sidebar.css';
+import { fireIcon, damagedAreaIcon, windIcon, highRiskZoneIcon } from './IconImports';
+import '../styles/Sidebar.css'; // Import your sidebar styles
 
 const Sidebar = ({ burnedArea }) => {
     const legendItems = [
-        { color: 'red', description: 'Fire' },
-        { color: 'yellow', description: 'High Risk' },
-		{ color: 'blue', description: 'Wind' },
-		{ color: 'grey', description: 'Zone with high risk of fire'}
+        { icon: fireIcon, description: 'Active fire' },
+        { icon: damagedAreaIcon, description: 'Damaged area' },
+        { icon: windIcon, description: 'Wind' },
+        { icon: highRiskZoneIcon, description: 'Zone with high risk of fire' }
     ];
 
     return (
         <div className="sidebar">
             <div className="sidebar-section">
-                <span>Current burned area: {burnedArea ? burnedArea : 2000} hectares</span>
+                <span className="sidebar-text">Current burned area: {burnedArea ? burnedArea : 2000} hectares</span>
             </div>
-			<div className="sidebar-legend">
-                <span>Legend:</span>
-			</div>
-            <div className="sidebar-legend">
-                <Legend items={legendItems} />
+            <div className="sidebar-section">
+                <div className="sidebar-legend">
+                    <span>Legend:</span>
+                    <Legend items={legendItems} />
+                </div>
             </div>
         </div>
     );

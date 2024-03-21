@@ -1,24 +1,21 @@
-import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet'
 import './App.css';
+import Map from './components/Map';
+import { useState } from 'react';
+import Sidebar from './components/Sidebar';
+import Topbar from './components/Topbar';
+
+// Get this data from the server
 
 function App() {
+    var [points, setPoint]= useState([])
+    points = [{x:51.505, y:0}, {x:51.505, y:0.01}, {x:51.503, y:0.01}]
     return (
-        <>
-        <h1>
-        Hello, Leaflet!
-        </h1>
-        <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker position={[51.505, -0.09]}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
-        </MapContainer>
-        </>
+        <div className="main">
+            <Topbar className="topbar"/>
+            <Sidebar className="sidebar"/>
+            {/* Pass the points we got from the server and render them on a map */}
+            <Map points={points} />
+        </div>
     );
 }
 

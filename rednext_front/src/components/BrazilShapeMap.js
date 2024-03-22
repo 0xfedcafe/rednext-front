@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
 import { Icon } from 'leaflet';
 import fire from "./fire_icon.png"
+import windUrl from "./wind_icon.png"
 
 const fireIcon = new Icon({
     iconUrl: fire,
@@ -12,7 +13,14 @@ const fireIcon = new Icon({
     iconSize: [32, 45],
 });
 
-const BrazilShapeMap = ({ points }) => {
+const windIcon = new Icon({
+    iconUrl: windUrl,
+    iconRetinaUrl: windUrl,
+    popupAnchor: [-0, -0],
+    iconSize: [32, 45],
+});
+
+const BrazilShapeMap = ({ points, winds }) => {
     const [geojsonData, setGeojsonData] = useState(null);
 
     useEffect(() => {
@@ -45,6 +53,13 @@ const BrazilShapeMap = ({ points }) => {
                 <Marker key={index} position={[point.x, point.y]} icon={fireIcon}>
                     <Popup>
                         Some kind of PopUp. {point.x} {point.y}
+                    </Popup>
+                </Marker>
+            ))}
+            {winds.map((wind, index) => (
+                <Marker key={index} position={[wind.y, wind.x]} icon={windIcon}>
+                    <Popup>
+					3m/s {wind.x} {wind.y}
                     </Popup>
                 </Marker>
             ))}

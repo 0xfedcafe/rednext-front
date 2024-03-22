@@ -35,12 +35,26 @@ function App() {
         { x: -8.0638, y: -34.8805 }   // Jaboatão dos Guararapes
     ];
 
+    var [cities, setPoint] = useState([])
+    var cities = [
+        { x: -51.3704, y: -23.3109 },
+        { x: -47.3846, y: -22.3572 },
+        { x: -44.9914, y: -12.1509 },
+        { x: -41.5089, y: -17.8575 },
+        { x: -49.4854, y: -28.9336 },
+        { x: -50.4183, y: -22.6597 },
+        { x: -49.0045, y: -28.4713 },
+        { x: -43.7093, y: -22.2449 },
+        { x: -52.4345, y: -29.7228 },
+        { x: -53.9198, y: -28.388 }
+      ];
+
     const legend_elements = ["a", "b", "c"]
     return (
         <div className="main">
             <Topbar className="topbar" />
             {/* Pass the points we got from the server and render them on a map */}
-            <BrazilShapeMap points={points} />
+            <BrazilShapeMap points={points} winds={cities} />
             <CircularButton/>
             {/* <FireMap /> */}
         </div>

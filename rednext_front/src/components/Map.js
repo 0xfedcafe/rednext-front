@@ -1,13 +1,13 @@
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import {Icon} from 'leaflet';
+import { Icon } from 'leaflet';
 import fire from "./fire_icon.png"
 
-const fireIcon = new Icon ({
+const fireIcon = new Icon({
     iconUrl: fire,
     iconRetinaUrl: fire,
-    popupAnchor:  [-0, -0],
-    iconSize: [32,45],
+    popupAnchor: [-0, -0],
+    iconSize: [32, 45],
 });
 
 const Map = ({ points }) => {

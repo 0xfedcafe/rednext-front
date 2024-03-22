@@ -9,8 +9,7 @@ import FireMap from './components/FireMap';
 // Get this data from the server
 
 function App() {
-<<<<<<< Updated upstream
-    var [points, setPoint]= useState([])
+    var [points, setPoint] = useState([])
     var points = [
         { x: -22.9068, y: -43.1729 }, // Rio de Janeiro
         { x: -15.7942, y: -47.8825 }, // Brasília
@@ -22,7 +21,7 @@ function App() {
         { x: -8.0476, y: -34.8770 },  // Recife
         { x: -30.0346, y: -51.2177 }, // Porto Alegre
         { x: -12.9714, y: -38.5014 },  // Salvador
-        {x:51.505, y:0}, {x:51.505, y:0.01}, {x:51.503, y:0.01},
+        { x: 51.505, y: 0 }, { x: 51.505, y: 0.01 }, { x: 51.503, y: 0.01 },
         { x: -7.2307, y: -35.8816 },  // João Pessoa
         { x: -22.9028, y: -43.2075 }, // Niterói
         { x: -8.0474, y: -34.8770 },  // Olinda
@@ -33,24 +32,16 @@ function App() {
         { x: -25.4296, y: -49.2713 }, // Curitiba (Duplicate for variety)
         { x: -22.9035, y: -43.2096 }, // São Gonçalo
         { x: -8.0638, y: -34.8805 }   // Jaboatão dos Guararapes
-];
+    ];
 
     const legend_elements = ["a", "b", "c"]
     return (
         <div className="main">
-            <Topbar className="topbar"/>
-            <Sidebar className="sidebar" legend_elements={legend_elements}/>
-=======
-    var [points, setPoint] = useState([])
-    points = [{ x: 51.505, y: 0 }, { x: 51.505, y: 0.01 }, { x: 51.503, y: 0.01 }]
-    return (
-        <div className="main">
             <Topbar className="topbar" />
-            <Sidebar className="sidebar" />
->>>>>>> Stashed changes
+            <Sidebar className="sidebar" legend_elements={legend_elements} />
             {/* Pass the points we got from the server and render them on a map */}
-            <BrazilShapeMap />
-            <FireMap />
+            <BrazilShapeMap points={points} />
+            {/* <FireMap /> */}
         </div>
     );
 }

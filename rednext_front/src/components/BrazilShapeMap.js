@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import axios from 'axios';
 import { Icon } from 'leaflet';
 import fire from "./fire_icon.png"
+import CircleMarkerWithRadius from './CircleMarkerWithRadius';
 
 const fireIcon = new Icon({
     iconUrl: fire,
@@ -12,7 +13,7 @@ const fireIcon = new Icon({
     iconSize: [32, 45],
 });
 
-const BrazilShapeMap = ({ points }) => {
+const BrazilShapeMap = ({ fire_points, affected_areas }) => {
     const [geojsonData, setGeojsonData] = useState(null);
 
     useEffect(() => {
@@ -30,7 +31,7 @@ const BrazilShapeMap = ({ points }) => {
     }, []);
 
     return (
-        <MapContainer center={[-10, -55]} zoom={4} minZoom={3}>
+        <MapContainer center={[-10, -55]} zoom={4} scrollWheelZoom={false} minZoom={3}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -41,12 +42,15 @@ const BrazilShapeMap = ({ points }) => {
                 attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
             />
             {/* Render custom markers with fire icon */}
-            {points.map((point, index) => (
+            {fire_points.map((point, index) => (
                 <Marker key={index} position={[point.x, point.y]} icon={fireIcon}>
                     <Popup>
                         Some kind of PopUp. {point.x} {point.y}
                     </Popup>
                 </Marker>
+            ))}
+            {affected_areas.map((point) => (
+		    <CircleMarkerWithRadius center={[point.x, point.y]} radius={40} />
             ))}
         </MapContainer>
     );

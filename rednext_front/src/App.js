@@ -9,9 +9,9 @@ import CircularButton from './components/CircularButton';
 
 // Get this data from the server
 
+
 function App() {
-    var [points, setPoint] = useState([])
-    var points = [
+    var fire_points = [
         { x: -22.9068, y: -43.1729 }, // Rio de Janeiro
         { x: -15.7942, y: -47.8825 }, // Brasília
         { x: -3.7184, y: -38.5434 },  // Fortaleza
@@ -35,12 +35,14 @@ function App() {
         { x: -8.0638, y: -34.8805 }   // Jaboatão dos Guararapes
     ];
 
-    const legend_elements = ["a", "b", "c"]
+    const affected_areas = [{x: -8.0723, y: -39.1264}, {x: -27.8179, y: -50.3264}, {x: -22.2271, y: -45.9394}]
+
+
     return (
         <div className="main">
             <Topbar className="topbar" />
             {/* Pass the points we got from the server and render them on a map */}
-            <BrazilShapeMap points={points} />
+            <BrazilShapeMap fire_points={fire_points} affected_areas={affected_areas} />
             <CircularButton/>
             {/* <FireMap /> */}
         </div>

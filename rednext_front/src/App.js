@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
 import BrazilShapeMap from './components/BrazilShapeMap';
 import FireMap from './components/FireMap';
+import CircularButton from './components/CircularButton';
 
 // Get this data from the server
 
@@ -38,9 +39,9 @@ function App() {
     return (
         <div className="main">
             <Topbar className="topbar" />
-            <Sidebar className="sidebar" legend_elements={legend_elements} />
             {/* Pass the points we got from the server and render them on a map */}
             <BrazilShapeMap points={points} />
+            <CircularButton/>
             {/* <FireMap /> */}
         </div>
     );

@@ -6,18 +6,10 @@ body {
 .leaflet-container {
     height: 90%; /* 90% of the remaining viewport height after accounting for the top bar */
     top: 10%;
-    width: 70%; /* 80% of the viewport width */
-    margin-left: 30%; /* Move the map container to the right by 20% */
+    width: 100%; /* 80% of the viewport width */
     position: fixed; /* Ensure proper positioning */
 }
 
-/* Style for the sidebar */
-.sidebar {
-    width: 30%; /* 40% of the viewport width */
-    top: 10%;
-    position: fixed; /* Fixed positioning to stay in place */
-    background-color: #FFFFFF; /* Example background color */
-}
 
 /* Style for the top bar */
 .topbar {

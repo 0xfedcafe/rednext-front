@@ -35,8 +35,7 @@ function App() {
         { x: -8.0638, y: -34.8805 }   // Jaboatão dos Guararapes
     ];
 
-    const affected_areas = [{x: -8.0723, y: -39.1264}, {x: -27.8179, y: -50.3264}, {x: -22.2271, y: -45.9394}]
-
+    var affected_areas = [{x: -8.0723, y: -39.1264}, {x: -27.8179, y: -50.3264}, {x: -22.2271, y: -45.9394}]
 
     var [cities, setPoint] = useState([])
     var cities = [

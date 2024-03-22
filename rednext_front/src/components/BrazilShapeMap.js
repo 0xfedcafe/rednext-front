@@ -21,8 +21,14 @@ const windIcon = new Icon({
     iconSize: [32, 45],
 });
 
-const BrazilShapeMap = ({ points, winds }) => {
-const BrazilShapeMap = ({ fire_points, affected_areas }) => {
+const riskIcon = new Icon({
+    iconUrl: windUrl,
+    iconRetinaUrl: windUrl,
+    popupAnchor: [-0, -0],
+    iconSize: [32, 45],
+});
+
+const BrazilShapeMap = ({ fire_points, winds, affected_areas }) => {
     const [geojsonData, setGeojsonData] = useState(null);
 
     useEffect(() => {
